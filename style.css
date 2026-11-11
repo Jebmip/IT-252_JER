@@ -1,132 +1,208 @@
+
+:root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --muted: #9ba7b4;
+    --accent: #58a6ff;
+    --border: #30363d;
+}
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px;
-    color: #263238;
-    background-color: #f5f7f8;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
 }
 
-header,
-section,
-footer {
-    margin-bottom: 24px;
-    padding: 24px;
-    background-color: #ffffff;
-    border: 1px solid #dce3e6;
-    border-radius: 8px;
+header, footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--surface);
 }
 
 header {
-    color: #ffffff;
-    background-color: #315b70;
+    padding-top: 65px;
+    border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-    margin-top: 0;
+    font-size: 2.5rem;
+}
+
+header p, section p, footer {
+    color: var(--muted);
 }
 
 nav {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 8px 16px;
-    margin-top: 20px;
+    gap: 25px;
+    padding: 18px;
+    background: #111820;
+    border-bottom: 1px solid var(--border);
 }
 
-nav a,
-a {
-    color: #176b87;
-}
-
-header nav a {
-    color: #ffffff;
+nav a {
+    color: var(--muted);
     text-decoration: none;
+    font-weight: bold;
 }
 
-header nav a:hover,
-header nav a:focus {
-    text-decoration: underline;
+nav a:hover, a:hover {
+    color: var(--accent);
 }
 
-hr {
-    display: none;
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 35px 20px;
 }
 
-h2 {
-    margin-top: 0;
-    color: #315b70;
+section {
+    background: var(--surface);
+    padding: 30px;
+    margin: 25px 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
+section h2 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#about img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    flex-shrink: 0;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3, article h3 {
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    margin-bottom: 12px;
+}
+
+ul, ol {
+    padding-left: 25px;
+    color: var(--muted);
+}
+
+li {
+    margin: 7px 0;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
-th,
-td {
-    padding: 10px;
-    border: 1px solid #dce3e6;
+th, td {
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    background-color: #edf3f5;
+    color: var(--accent);
 }
 
-input,
-textarea {
+article {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+a {
+    color: var(--accent);
+}
+
+input, textarea {
     width: 100%;
-    max-width: 420px;
-    padding: 10px;
-    border: 1px solid #aebdc3;
-    border-radius: 4px;
+    padding: 12px;
+    margin: 8px 0 15px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     font: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid var(--accent);
 }
 
 button {
-    padding: 10px 16px;
-    color: #ffffff;
-    background-color: #315b70;
-    border: 0;
-    border-radius: 4px;
-    font: inherit;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-button:hover,
-button:focus {
-    background-color: #244656;
+button:hover {
+    opacity: 0.85;
 }
 
 footer {
-    color: #4b5c63;
-    font-size: 0.95rem;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
 }
 
 @media (max-width: 600px) {
-    body {
-        padding: 12px;
+    header h1 {
+        font-size: 2rem;
     }
 
-    header,
-    section,
-    footer {
-        padding: 18px;
+    nav {
+        gap: 15px;
     }
 
-    th,
-    td {
-        padding: 8px;
+    section {
+        padding: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about img {
+        width: 160px;
+        height: 160px;
+    }
+
+    table {
+        font-size: 0.85rem;
     }
 }
