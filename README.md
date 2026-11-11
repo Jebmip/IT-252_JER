@@ -1,2 +1,2 @@
 # IT-252_JER
-Hello World!
+Hello World! I'm Jebmip and my portfolio.
